@@ -84,4 +84,6 @@ public class PrinterServiceTest {
       inOrder.verify(mockPrinter).write(Commands.TXT_NORMAL);
       inOrder.verify(mockPrinter).write(Commands.TXT_4SQUARE);
    }
+
+
 }

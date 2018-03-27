@@ -1,7 +1,6 @@
 # ESC/POS Java Library for thermal printers
 [![Build Status](https://travis-ci.org/stefanosbou/esc-pos-java.svg?branch=master)](https://travis-ci.org/stefanosbou/esc-pos-java)
-[![Coverage Status](https://coveralls.io/repos/github/stefanosbou/esc-pos-java/badge.svg)](https://coveralls.io/github/stefanosbou/esc-pos-java)
-
+[![codecov](https://codecov.io/gh/stefanosbou/esc-pos-java/branch/master/graph/badge.svg)](https://codecov.io/gh/stefanosbou/esc-pos-java)
 ## Synopsis
 
 Java library for ESC/POS compatible thermal printers, serial or network connected. 
