@@ -1,8 +1,5 @@
 language: java
 sudo: false
-install:
-  - mvn test-compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-script:
-  - mvn test jacoco:report
+script: "mvn cobertura:cobertura"
 after_success:
-  - mvn coveralls:report
+  - bash <(curl -s https://codecov.io/bash)
