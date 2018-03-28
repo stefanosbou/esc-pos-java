@@ -85,5 +85,65 @@ public class PrinterServiceTest {
       inOrder.verify(mockPrinter).write(Commands.TXT_4SQUARE);
    }
 
+   @Test
+   public void testPrinterServiceSetTextTypeBold() {
+      printerService.setTextTypeBold();
+      InOrder inOrder = inOrder(mockPrinter);
+      inOrder.verify(mockPrinter).write(Commands.TXT_BOLD_ON);
+      inOrder.verify(mockPrinter).write(Commands.TXT_UNDERL_OFF);
+   }
 
+   @Test
+   public void testPrinterServiceSetTextTypeUnderline() {
+      printerService.setTextTypeUnderline();
+      InOrder inOrder = inOrder(mockPrinter);
+      inOrder.verify(mockPrinter).write(Commands.TXT_BOLD_OFF);
+      inOrder.verify(mockPrinter).write(Commands.TXT_UNDERL_ON);
+   }
+
+   @Test
+   public void testPrinterServiceSetTextType2Underline() {
+      printerService.setTextType2Underline();
+      InOrder inOrder = inOrder(mockPrinter);
+      inOrder.verify(mockPrinter).write(Commands.TXT_BOLD_OFF);
+      inOrder.verify(mockPrinter).write(Commands.TXT_UNDERL2_ON);
+   }
+
+   @Test
+   public void testPrinterServiceSetTextTypeBoldUnderline() {
+      printerService.setTextTypeBoldUnderline();
+      InOrder inOrder = inOrder(mockPrinter);
+      inOrder.verify(mockPrinter).write(Commands.TXT_BOLD_ON);
+      inOrder.verify(mockPrinter).write(Commands.TXT_UNDERL_ON);
+   }
+
+   @Test
+   public void testPrinterServiceSetTextTypeBold2Underline() {
+      printerService.setTextTypeBold2Underline();
+      InOrder inOrder = inOrder(mockPrinter);
+      inOrder.verify(mockPrinter).write(Commands.TXT_BOLD_ON);
+      inOrder.verify(mockPrinter).write(Commands.TXT_UNDERL2_ON);
+   }
+
+   @Test
+   public void testPrinterServiceSetTextTypeNormale() {
+      printerService.setTextTypeNormal();
+      InOrder inOrder = inOrder(mockPrinter);
+      inOrder.verify(mockPrinter).write(Commands.TXT_BOLD_OFF);
+      inOrder.verify(mockPrinter).write(Commands.TXT_UNDERL_OFF);
+   }
+
+   @Test
+   public void testPrinterServiceCutPart() {
+      printerService.cutPart();
+      verify(mockPrinter, times(5)).write(Commands.CTL_LF);
+      verify(mockPrinter).write(Commands.PAPER_PART_CUT);
+   }
+
+   @Test
+   public void testPrinterServiceCutFull() {
+      printerService.cutFull();
+      verify(mockPrinter, times(5)).write(Commands.CTL_LF);
+      verify(mockPrinter).write(Commands.PAPER_FULL_CUT);
+   }
 }

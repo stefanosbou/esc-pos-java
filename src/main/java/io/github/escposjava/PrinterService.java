@@ -93,6 +93,10 @@ public class PrinterService {
       setTextType("U2");
    }
 
+   public void setTextTypeBoldUnderline(){
+      setTextType("BU");
+   }
+
    public void setTextTypeBold2Underline(){
       setTextType("BU2");
    }
@@ -132,7 +136,7 @@ public class PrinterService {
    }
 
    private void cut(String mode){
-      for (int i=0;i<6;i++){
+      for (int i = 0; i < 5; i++){
          write(CTL_LF);
       }
       if (mode.toUpperCase().equals("PART")){
